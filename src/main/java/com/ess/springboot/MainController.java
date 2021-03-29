@@ -48,7 +48,15 @@ public class MainController {
 		dto.setMember_pw(request.getParameter("member_pw"));
 		dto.setMember_phone(request.getParameter("member_phone"));
 		memberDao.member_modify(dto);
-		System.out.println(dto.getMember_id());
+		System.out.println("modify : "+dto.getMember_id());
+		return "redirect:admin_member_list";
+	}
+	
+	@RequestMapping("/admin_member_delete")
+	public String admin_member_delete(HttpServletRequest request, Model model)
+	{
+		memberDao.member_delete(request.getParameter("member_id"));
+		System.out.println("delete : "+request.getParameter("member_id"));
 		return "redirect:admin_member_list";
 	}
 }
