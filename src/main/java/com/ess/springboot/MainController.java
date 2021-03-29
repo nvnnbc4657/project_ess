@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ess.springboot.dao.IMemberDao;
+import com.ess.springboot.dto.MemberDto;
 
 @Controller
 @ComponentScan(basePackages = "com.ess.springboot.dao")
@@ -35,5 +36,19 @@ public class MainController {
 		String member_id = request.getParameter("member_id");
 		model.addAttribute("dto", memberDao.member_view(member_id));
 		return "admin/admin_member_modify";
+	}
+	
+	@RequestMapping("/admin_member_modify")
+	public String admin_member_modify(HttpServletRequest request, Model model)
+	{
+		MemberDto dto = new MemberDto();
+		dto.setMember_id(request.getParameter("member_id"));
+		dto.setMember_email(request.getParameter("member_email"));
+		dto.setMember_name(request.getParameter("member_name"));
+		dto.setMember_pw(request.getParameter("member_pw"));
+		dto.setMember_phone(request.getParameter("member_phone"));
+		memberDao.member_modify(dto);
+		System.out.println(dto.getMember_id());
+		return "redirect:admin_member_list";
 	}
 }

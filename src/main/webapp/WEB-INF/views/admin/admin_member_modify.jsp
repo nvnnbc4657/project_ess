@@ -124,7 +124,7 @@
 							<label>아이디</label>
 						</td>
 						<td>
-							<input type="text" value=${dto.member_id } name="member_id">
+							<input type="text" value=${dto.member_id } name="member_id" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -161,8 +161,8 @@
 					</tr>
 				</table>
 				<div class="col-2" id="btn_con">
-					<input type="submit" formaction="member_modify" class="btn btn-primary" value="수정">
-					<input type="submit" formaction="member_delete" class="btn btn-danger" value="삭제">
+					<input type="submit" formaction="admin_member_modify" class="btn btn-primary" value="정보 수정">
+					<input type="submit" formaction="admin_member_delete" class="btn btn-danger" value="회원 삭제">
 				</div>
 			</form>
 		</div>

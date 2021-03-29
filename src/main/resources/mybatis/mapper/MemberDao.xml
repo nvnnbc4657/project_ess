@@ -13,5 +13,9 @@
 	<select id="member_view" resultType="com.ess.springboot.dto.MemberDto"> 
 		select * from ess_member where member_id = #{member_id}
 	</select>
+	
+	<update id="member_modify" parameterType="com.ess.springboot.dto.MemberDto">
+		update ess_member set member_email = #{member_email}, member_name = #{member_name}, member_pw = #{member_pw}, member_phone = #{member_phone} where member_id = #{member_id}
+	</update>
 
 </mapper>
