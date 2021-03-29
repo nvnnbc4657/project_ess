@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -102,7 +103,7 @@
       <div id="ToG" class="col-2"> 
         <div> 관리자 페이지 </div><br>
         <ul>
-          <li><a href="#">회원 목록</a></li>
+          <li><a href="admin_member_list">회원 목록</a></li>
           <li><a href="#">상품 목록</a></li>
           <li><a href="#">상품 등록</a></li>
           <li><a href="#">주문 목록</a></li>
@@ -116,14 +117,14 @@
         <hr>
         
 		<div class="col-6">
-			<form>
+			<form action="member_modify" method="post">
 				<table>
 					<tr>
 						<td>
 							<label>아이디</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" value=${dto.member_id } name="member_id">
 						</td>
 					</tr>
 					<tr>
@@ -131,7 +132,7 @@
 							<label>이메일</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" value=${dto.member_email } name="member_email">
 						</td>
 					</tr>
 					<tr>
@@ -139,7 +140,7 @@
 							<label>이름</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" value=${dto.member_name } name="member_name">
 						</td>
 					</tr>
 					<tr>
@@ -147,7 +148,7 @@
 							<label>비밀번호</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" value=${dto.member_pw } name="member_pw">
 						</td>
 					</tr>
 					<tr>
@@ -155,13 +156,13 @@
 							<label>휴대폰</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" value=${dto.member_phone } name="member_phone">
 						</td>
 					</tr>
 				</table>
 				<div class="col-2" id="btn_con">
-					<input type="submit" class="btn btn-primary" value="수정">
-					<input type="button" class="btn btn-danger" value="삭제">
+					<input type="submit" formaction="member_modify" class="btn btn-primary" value="수정">
+					<input type="submit" formaction="member_delete" class="btn btn-danger" value="삭제">
 				</div>
 			</form>
 		</div>

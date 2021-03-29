@@ -1,5 +1,7 @@
 package com.ess.springboot;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -25,5 +27,13 @@ public class MainController {
 	{
 		model.addAttribute("list", memberDao.member_list());
 		return "admin/admin_member_list";
+	}
+	
+	@RequestMapping("/admin_member_modify_form")
+	public String admin_member_modify_form(HttpServletRequest request, Model model)
+	{
+		String member_id = request.getParameter("member_id");
+		model.addAttribute("dto", memberDao.member_view(member_id));
+		return "admin/admin_member_modify";
 	}
 }

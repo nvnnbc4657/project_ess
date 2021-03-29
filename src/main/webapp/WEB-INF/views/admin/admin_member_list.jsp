@@ -93,7 +93,7 @@
       <div id="ToG" class="col-2"> 
         <div> 관리자 페이지 </div><br>
         <ul>
-          <li><a href="#">회원 목록</a></li>
+          <li><a href="admin_member_list">회원 목록</a></li>
           <li><a href="#">상품 목록</a></li>
           <li><a href="#">상품 등록</a></li>
           <li><a href="#">주문 목록</a></li>
@@ -119,7 +119,7 @@
 				<td>${dto.member_id}</td>
 				<td>${dto.member_name}</td>
 				<td>${dto.member_phone }</td>
-				<td> <a href="member_delete?member_no=${dto.member_no}"><button type="button" class="btn btn-secondary">수정</button></a> </td>
+				<td> <a href="admin_member_modify_form?member_id=${dto.member_id}"><button type="button" class="btn btn-secondary">수정</button></a> </td>
 			</tr>
 		</c:forEach>
         </table>
