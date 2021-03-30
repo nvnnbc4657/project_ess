@@ -18,4 +18,5 @@ public interface IMemberDao {
 	public MemberDto member_view(String member_id);
 	public int member_modify(MemberDto dto);
 	public int member_delete(String member_id);
+	public List<MemberDto> member_modify_find(String member_id);
 }

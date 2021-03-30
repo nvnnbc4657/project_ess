@@ -104,9 +104,9 @@
         <div> 관리자 페이지 </div><br>
         <ul>
           <li><a href="admin_member_list">회원 목록</a></li>
-          <li><a href="#">상품 목록</a></li>
-          <li><a href="#">상품 등록</a></li>
-          <li><a href="#">주문 목록</a></li>
+          <li><a href="admin_product_list">상품 목록</a></li>
+          <li><a href="admin_product_add">상품 등록</a></li>
+          <li><a href="admin_order_list">주문 목록</a></li>
         </ul>
       </div>
       <div id="profileBox" class="col-10">

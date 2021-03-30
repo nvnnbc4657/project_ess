@@ -94,9 +94,9 @@
         <div> 관리자 페이지 </div><br>
         <ul>
           <li><a href="admin_member_list">회원 목록</a></li>
-          <li><a href="#">상품 목록</a></li>
-          <li><a href="#">상품 등록</a></li>
-          <li><a href="#">주문 목록</a></li>
+          <li><a href="admin_product_list">상품 목록</a></li>
+          <li><a href="admin_product_add">상품 등록</a></li>
+          <li><a href="admin_order_list">주문 목록</a></li>
         </ul>
       </div>
       <div id="profileBox" class="col-10">
@@ -129,8 +129,8 @@
         </div>
         
         <div class="col-3" >
-	      	<form action="#" class="form-inline">
-	      		<input type="text" class="form-control" placeholder="아이디">
+	      	<form action="admin_member_modify_find" class="form-inline">
+	      		<input type="text" class="form-control" placeholder="아이디" name="member_id">
 	      		<input type="submit" class="btn btn-secondary" value="검색">
 	      	</form>
       </div>
