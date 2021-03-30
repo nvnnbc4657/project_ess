@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ess.springboot.dao.IMemberDao;
 import com.ess.springboot.dao.IProductDao;
 import com.ess.springboot.dto.MemberDto;
+import com.ess.springboot.dto.ProductDto;
 
 @Controller
 @ComponentScan(basePackages = "com.ess.springboot.dao")
@@ -79,7 +80,42 @@ public class MainController {
 		model.addAttribute("list", productDao.product_list());
 		return "admin/admin_product_list";
 	}
-	
+	//상품 검색
+	@RequestMapping("/admin_product_find")
+	public String admin_product_find(HttpServletRequest request, Model model)
+	{
+		System.out.println("start find prd");
+		String prd_no = request.getParameter("prd_no");
+		System.out.println("find prd : "+request.getParameter("prd_no"));
+		model.addAttribute("list", productDao.product_find(prd_no));
+		return "admin/admin_product_list";
+	}
+	//상품 수정 화면
+	@RequestMapping("/admin_product_modify_form")
+	public String admin_product_modify_form(HttpServletRequest request, Model model)
+	{
+		String prd_no = request.getParameter("prd_no");
+		model.addAttribute("dto", productDao.product_view(prd_no));
+		return "admin/admin_product_modify";
+	}
+	//상품 수정
+	@RequestMapping("/admin_prodcut_modify")
+	public String admin_product_modify(HttpServletRequest request, Model model)
+	{
+		System.out.println("start prd modify");
+		ProductDto dto = new ProductDto();
+		dto.setPrd_no(Integer.parseInt(request.getParameter("prd_no")));
+		dto.setPrd_name(request.getParameter("prd_name"));
+		dto.setPrd_price(Integer.parseInt(request.getParameter("prd_price")));
+		dto.setPrd_type(request.getParameter("prd_type"));
+		dto.setPrd_team(request.getParameter("prd_team"));
+		dto.setPrd_img1(request.getParameter("prd_img1"));
+		dto.setPrd_img2(request.getParameter("prd_img2"));
+		dto.setPrd_img3(request.getParameter("prd_img3"));
+		productDao.product_modify(dto);
+		System.out.println("modify : "+dto.getPrd_no());
+		return "redirect:admin_product_list";
+	}
 	@RequestMapping("/admin_product_add")
 	public String admin_product_add()
 	{

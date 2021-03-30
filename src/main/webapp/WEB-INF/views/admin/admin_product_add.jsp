@@ -128,14 +128,6 @@
 					</tr>
 					<tr>
 						<td>
-							<label>상품 코드</label>
-						</td>
-						<td>
-							<input type="text">
-						</td>
-					</tr>
-					<tr>
-						<td>
 							<label>상품 가격</label>
 						</td>
 						<td>
@@ -148,6 +140,7 @@
 						</td>
 						<td>
 							<select name="type">
+								<option value="" selected disabled hidden>선택하세요</option>
 								<option value="0">유니폼</option>
 								<option value="1">티셔츠</option>
 								<option value="2">아우터</option>
@@ -162,6 +155,7 @@
 						</td>
 						<td>
 							<select name="team">
+								<option value="" selected disabled hidden>선택하세요</option>
 								<option value="0">DK</option>
 								<option value="1">GEN.G</option>
 								<option value="2">SK T1</option>

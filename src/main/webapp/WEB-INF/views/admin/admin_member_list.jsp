@@ -113,6 +113,7 @@
             <th style="width: 400px;">휴대폰</th>
             <th style="width: 100px;"></th>
           </tr>
+          <hr>
           <!-- 마지막 주문목록이 위부터 내림차순 정렬  -->
          <c:forEach var="dto" items="${ list }" >
 			<tr class="purchaseStatTable_raw">

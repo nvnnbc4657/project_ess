@@ -117,7 +117,7 @@
         <hr>
         
 		<div class="col-6">
-			<form action="member_modify" method="post">
+			<form method="post">
 				<table>
 					<tr>
 						<td>
@@ -140,7 +140,7 @@
 							<label>이름</label>
 						</td>
 						<td>
-							<input type="text" value=${dto.member_name } name="member_name">
+							<input type="text" value="${dto.member_name }" name="member_name">
 						</td>
 					</tr>
 					<tr>

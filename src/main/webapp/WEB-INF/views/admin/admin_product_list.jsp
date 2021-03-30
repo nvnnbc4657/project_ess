@@ -144,11 +144,11 @@ a:hover, a:active {
 				<hr>
 				<c:forEach var="dto" items="${ list }">
 					<tr class="purchaseStatTable_raw">
-						<td><img src="${dto.prd_img1 }"
+						<td><img src="/project_ess/src/main/resources/static/img/${dto.prd_img1 }.jpg"
 							alt="상품 이미지"></td>
 						<td>${dto.prd_name}</td>
 						<td>${dto.prd_no }</td>
-						<td><button type="button" class="btn btn-secondary">수정</button></td>
+						<td><a href="admin_product_modify_form?prd_no=${dto.prd_no }"><button type="button" class="btn btn-secondary">수정</button></a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -158,8 +158,8 @@ a:hover, a:active {
 			</div>
 
 			<div class="col-3">
-				<form action="#" class="form-inline">
-					<input type="text" class="form-control" placeholder="상품 코드">
+				<form action="admin_product_find" class="form-inline">
+					<input type="text" class="form-control" placeholder="상품 코드" name="prd_no">
 					<input type="submit" class="btn btn-secondary" value="검색">
 				</form>
 			</div>

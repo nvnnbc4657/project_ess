@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -116,14 +117,14 @@
         <hr>
         
 		<div class="col-6">
-			<form>
+			<form method="post">
 				<table>
 					<tr>
 						<td>
 							<label>상품명</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" value="${dto.prd_name }" name="prd_name">
 						</td>
 					</tr>
 					<tr>
@@ -131,7 +132,15 @@
 							<label>상품 코드</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="number" value=${dto.prd_no } name="prd_no" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>상품 가격</label>
+						</td>
+						<td>
+							<input type="number" value=${dto.prd_price } name="prd_price">
 						</td>
 					</tr>
 					<tr>
@@ -139,12 +148,13 @@
 							<label>상품 분류</label>
 						</td>
 						<td>
-							<select name="type">
-								<option value="0">유니폼</option>
-								<option value="1">티셔츠</option>
-								<option value="2">아우터</option>
-								<option value="3">악세서리</option>
-								<option value="4">ESS+</option>
+							<select name="prd_type">
+								<option value="" selected disabled hidden>선택하세요</option>
+								<option value=0>유니폼</option>
+								<option value=1>티셔츠</option>
+								<option value=2>아우터</option>
+								<option value=3>악세서리</option>
+								<option value=4>ESS+</option>
 							</select>
 						</td>
 					</tr>
@@ -153,12 +163,13 @@
 							<label>상품 팀</label>
 						</td>
 						<td>
-							<select name="team">
-								<option value="0">DK</option>
-								<option value="1">GEN.G</option>
-								<option value="2">SK T1</option>
-								<option value="3">DRX</option>
-								<option value="4">HLE</option>
+							<select name="prd_team">
+								<option value="" selected disabled hidden>선택하세요</option>
+								<option value=0>DK</option>
+								<option value=1>GEN.G</option>
+								<option value=2>SK T1</option>
+								<option value=3>DRX</option>
+								<option value=4>HLE</option>
 							</select>
 						</td>
 					</tr>
@@ -168,7 +179,7 @@
 							<label>파일 1</label>
 						</td>
 						<td>
-							<input type="file" accept="image/png, image/jpeg" name="file1">
+							<input type="file" accept="image/jpeg" name="prd_img1" value=${prd_img1 }>
 						</td>
 					</tr>
 					<tr>
@@ -176,7 +187,7 @@
 							<label>파일 2</label>
 						</td>
 						<td>
-							<input type="file" accept="image/png, image/jpeg" name="file2">
+							<input type="file" accept="image/jpeg" name="prd_img2" value=${prd_img2 }>
 						</td>
 					</tr>
 					<tr>
@@ -184,14 +195,14 @@
 							<label>파일 3</label>
 						</td>
 						<td>
-							<input type="file" accept="image/png, image/jpeg" name="file3">
+							<input type="file" accept="image/jpeg" name="prd_img3" value=${prd_img3 }>
 						</td>
 					</tr>
 					
 				</table>
 				<div class="col-2" id="btn_con">
-					<input type="submit" class="btn btn-primary" value="수정">
-					<input type="button" class="btn btn-danger" value="삭제">
+					<input type="submit" formaction="admin_product_modify" class="btn btn-primary" value="수정">
+					<input type="submit" formaction="admin_product_delete" class="btn btn-danger" value="삭제">
 				</div>
 			</form>
 		</div>

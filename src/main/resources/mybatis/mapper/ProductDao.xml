@@ -9,5 +9,17 @@
 	<select id="product_list" resultType="com.ess.springboot.dto.ProductDto">
 		select * from ess_product order by prd_no desc
 	</select>
+	
+	<select id="product_find" resultType="com.ess.springboot.dto.ProductDto">
+		select * from ess_product where prd_no = #{prd_no}
+	</select>
+	
+	<select id="product_view" resultType="com.ess.springboot.dto.ProductDto">
+		select * from ess_product where prd_no = #{prd_no}
+	</select>
+	
+	<update id="product_modify" parameterType="com.ess.springboot.dto.ProductDto">
+		update ess_product set prd_name = #{prd_name}, prd_price = #{prd_price}, prd_type = #{prd_type}, prd_team = #{prd_team}, prd_img1 = #{prd_img1}, prd_img2 = #{prd_img2}, prd_img3 = #{prd_img3} where prd_no = #{prd_no}
+	</update>
 
 </mapper>
