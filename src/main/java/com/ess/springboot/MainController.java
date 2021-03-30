@@ -116,6 +116,13 @@ public class MainController {
 		System.out.println("modify : "+dto.getPrd_no());
 		return "redirect:admin_product_list";
 	}
+	@RequestMapping("/admin_product_delete")
+	public String admin_product_delete(HttpServletRequest request, Model model)
+	{
+		productDao.product_delete(Integer.parseInt(request.getParameter("prd_no")));
+		System.out.println("delete : "+request.getParameter("prd_no"));
+		return "redirect:admin_product_list";
+	}
 	@RequestMapping("/admin_product_add")
 	public String admin_product_add()
 	{

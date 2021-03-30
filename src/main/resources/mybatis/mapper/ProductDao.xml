@@ -22,4 +22,7 @@
 		update ess_product set prd_name = #{prd_name}, prd_price = #{prd_price}, prd_type = #{prd_type}, prd_team = #{prd_team}, prd_img1 = #{prd_img1}, prd_img2 = #{prd_img2}, prd_img3 = #{prd_img3} where prd_no = #{prd_no}
 	</update>
 
+	<delete id="product_delete" parameterType="com.ess.springboot.dto.ProductDto">
+		delete from ess_product where prd_no = #{prd_no}
+	</delete>
 </mapper>

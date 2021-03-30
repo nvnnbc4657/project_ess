@@ -13,7 +13,7 @@ public interface IProductDao {
 	public List<ProductDto> product_list();
 	public ProductDto product_add();
 	public ProductDto product_view(String prd_no);
-	public int prodcut_delete(String prd_name);
+	public int product_delete(int prd_no);
 	public List<ProductDto> product_find(String prd_no);
 	public int product_modify(ProductDto dto);
 }
