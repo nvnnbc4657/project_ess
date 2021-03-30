@@ -99,7 +99,7 @@ public class MainController {
 		return "admin/admin_product_modify";
 	}
 	//상품 수정
-	@RequestMapping("/admin_prodcut_modify")
+	@RequestMapping("/admin_product_modify")
 	public String admin_product_modify(HttpServletRequest request, Model model)
 	{
 		System.out.println("start prd modify");
