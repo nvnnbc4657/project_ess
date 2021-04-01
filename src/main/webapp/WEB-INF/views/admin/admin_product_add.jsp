@@ -123,7 +123,7 @@
 							<label>상품명</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="text" name="prd_name">
 						</td>
 					</tr>
 					<tr>
@@ -131,7 +131,7 @@
 							<label>상품 가격</label>
 						</td>
 						<td>
-							<input type="text">
+							<input type="number" name="prd_price">
 						</td>
 					</tr>
 					<tr>
@@ -139,7 +139,7 @@
 							<label>상품 분류</label>
 						</td>
 						<td>
-							<select name="type">
+							<select name="prd_type">
 								<option value="" selected disabled hidden>선택하세요</option>
 								<option value="0">유니폼</option>
 								<option value="1">티셔츠</option>
@@ -154,7 +154,7 @@
 							<label>상품 팀</label>
 						</td>
 						<td>
-							<select name="team">
+							<select name="prd_team">
 								<option value="" selected disabled hidden>선택하세요</option>
 								<option value="0">DK</option>
 								<option value="1">GEN.G</option>
@@ -170,7 +170,7 @@
 							<label>파일 1</label>
 						</td>
 						<td>
-							<input type="file" accept="image/png, image/jpeg" name="file1">
+							<input type="file" accept="image/png, image/jpeg" name="prd_img1">
 						</td>
 					</tr>
 					<tr>
@@ -178,7 +178,7 @@
 							<label>파일 2</label>
 						</td>
 						<td>
-							<input type="file" accept="image/png, image/jpeg" name="file2">
+							<input type="file" accept="image/png, image/jpeg" name="prd_img2">
 						</td>
 					</tr>
 					<tr>
@@ -186,13 +186,13 @@
 							<label>파일 3</label>
 						</td>
 						<td>
-							<input type="file" accept="image/png, image/jpeg" name="file3">
+							<input type="file" accept="image/png, image/jpeg" name="prd_img3">
 						</td>
 					</tr>
 					
 				</table>
 				<div class="col-2" id="btn_con">
-					<input type="submit" class="btn btn-primary" value="등록">
+					<input type="submit" class="btn btn-primary" value="등록" formaction="admin_product_add">
 				</div>
 			</form>
 		</div>
